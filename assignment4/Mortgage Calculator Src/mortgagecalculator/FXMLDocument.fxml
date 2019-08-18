@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mortgagecalculator.FXMLDocumentController">
+   <children>
+      <Text layoutX="117.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mortgage Calculator" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="116.830078125" AnchorPane.topAnchor="35.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <MenuBar layoutX="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="helpinfo" mnemonicParsing="false" onAction="#helpInfoDialog" text="Info">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="purchasepricetextfield" layoutX="50.0" layoutY="100.0" prefHeight="29.0" prefWidth="236.0" promptText="Purchase Price" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="100.0" />
+      <TextField fx:id="downpaymentamounttextfield" layoutX="60.0" layoutY="110.0" prefHeight="29.0" prefWidth="236.0" promptText="Down Payment Amount" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="140.0" />
+      <TextField fx:id="interestratetextfield" layoutX="70.0" layoutY="120.0" prefHeight="29.0" prefWidth="236.0" promptText="Monthly Percent Interest Rate" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0" />
+      <Slider fx:id="loanplanslider" layoutX="230.0" layoutY="192.0" majorTickUnit="10.0" minorTickCount="10" showTickLabels="true" showTickMarks="true" snapToTicks="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="192.0" />
+      <Button layoutX="420.0" layoutY="188.0" mnemonicParsing="false" onAction="#calculate" prefHeight="25.0" prefWidth="236.0" text="Calculate" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="140.0" />
+      <TextArea fx:id="display" layoutX="117.0" layoutY="241.0" prefHeight="145.0" prefWidth="366.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="117.0" AnchorPane.topAnchor="241.0" />
+      <Label layoutX="215.0" layoutY="172.0" text="Number of years" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

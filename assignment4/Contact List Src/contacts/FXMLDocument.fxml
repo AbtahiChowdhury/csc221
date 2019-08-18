@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contacts.FXMLDocumentController">
+   <children>
+      <Label layoutX="286.0" layoutY="42.0" text="Contact List" textAlignment="CENTER" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="42.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="closeitem" mnemonicParsing="false" onAction="#closeProgram" text="Close">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem fx:id="helpaddingcontacts" mnemonicParsing="false" onAction="#helpAddingContactDialog" text="Adding Contacts" />
+                  <MenuItem fx:id="helpeditingcontacts" mnemonicParsing="false" onAction="#helpEditingContactDialog" text="Editing Contacts" />
+                  <MenuItem fx:id="helpdeletingcontacts" mnemonicParsing="false" onAction="#helpDeletingContactDialog" text="Deleting Contacts" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="tableview" editable="true" layoutX="200.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
+        <columns>
+          <TableColumn fx:id="tablecolumnfirstname" maxWidth="50000.0" minWidth="125.0" prefWidth="175.0" text="First Name" />
+          <TableColumn fx:id="tablecolumnlastname" maxWidth="50000.0" minWidth="125.0" prefWidth="175.0" text="Last Name" />
+          <TableColumn fx:id="tablecolumnemailaddress" maxWidth="50000.0" minWidth="125.0" prefWidth="175.0" sortable="false" text="Email" />
+          <TableColumn fx:id="tablecolumnphonenumber" maxWidth="50000.0" minWidth="125.0" prefWidth="175.0" sortable="false" text="Phone Number" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#expandContact" text="Expand" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteSelectedContact" text="Delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <TextField fx:id="firstnamefield" layoutX="50.0" layoutY="423.0" promptText="First Name" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="50.0" />
+      <TextField fx:id="lastnamefield" layoutX="185.0" layoutY="328.0" promptText="Last Name" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="225.0" />
+      <TextField fx:id="emailaddressfield" layoutX="14.0" layoutY="353.0" promptText="Email Address" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="50.0" />
+      <TextField fx:id="phonenumberfield" layoutX="225.0" layoutY="365.0" promptText="Phone Number" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="225.0" />
+      <Button fx:id="addcontactbutton" layoutX="429.0" layoutY="448.0" mnemonicParsing="false" onAction="#addContact" onKeyPressed="#addContact" prefHeight="67.0" prefWidth="150.0" text="Add" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="221.0" />
+      <Button layoutX="600.0" layoutY="409.0" mnemonicParsing="false" onAction="#clearImagePath" prefHeight="30.0" prefWidth="150.0" text="Cancel Image Selection" AnchorPane.bottomAnchor="61.0" AnchorPane.rightAnchor="50.0" />
+      <Button layoutX="600.0" layoutY="448.0" mnemonicParsing="false" onAction="#getImagePath" prefHeight="30.0" prefWidth="150.0" text="Add Image" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="50.0" />
+      <Label fx:id="filepathlabel" layoutX="185.0" layoutY="529.0" prefHeight="25.0" prefWidth="345.0" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="50.0" />
+   </children>
+</AnchorPane>
